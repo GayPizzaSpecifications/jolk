@@ -15,7 +15,7 @@ jolk is a tool that analyzes executables installed in macOS using various analyz
 $ jolk
 analyze /usr/libexec/remotectl
 complete /usr/libexec/remotectl 252.68ms
-... more executables on the system ..
+... more executables on the system ...
 ```
 
 jolk produces a report in the file `executables.json` which will provide details like this:
