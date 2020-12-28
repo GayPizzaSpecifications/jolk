@@ -25,9 +25,11 @@ class LipoAnalyzer: ExecutableAnalyzer {
         task.standardError = errorPipe
 
         try task.run()
-
+        
         let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-        let archInfoStrings = String(data: outputData, encoding: .utf8)!.components(separatedBy: " ")
+        task.waitUntilExit()
+        let outputString = String(data: outputData, encoding: .utf8)!
+        let archInfoStrings = outputString.components(separatedBy: " ")
         var arches: [String] = []
 
         for archInfo in archInfoStrings {
@@ -42,7 +44,7 @@ class LipoAnalyzer: ExecutableAnalyzer {
 
             arches.append(cleanArchInfo)
         }
-
+        
         if arches.isEmpty {
             output.isNotExecutable()
         } else {

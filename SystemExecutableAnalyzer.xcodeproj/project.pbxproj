@@ -15,6 +15,8 @@
 		2A78480A259998A000903FC1 /* LipoAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784809259998A000903FC1 /* LipoAnalyzer.swift */; };
 		2A78480D2599998F00903FC1 /* ExecutableAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */; };
 		2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784811259999FB00903FC1 /* AnalysisOutput.swift */; };
+		2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */; };
+		2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,6 +40,8 @@
 		2A784809259998A000903FC1 /* LipoAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LipoAnalyzer.swift; sourceTree = "<group>"; };
 		2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableAnalyzer.swift; sourceTree = "<group>"; };
 		2A784811259999FB00903FC1 /* AnalysisOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisOutput.swift; sourceTree = "<group>"; };
+		2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManPageAnalyzer.swift; sourceTree = "<group>"; };
+		2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkerAnalyzer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 			children = (
 				2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */,
 				2A784809259998A000903FC1 /* LipoAnalyzer.swift */,
+				2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */,
+				2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */,
 			);
 			path = ExecutableAnalyzers;
 			sourceTree = "<group>";
@@ -158,8 +164,10 @@
 				2A7847FF25998EE900903FC1 /* StringsAnalyzer.swift in Sources */,
 				2A78480D2599998F00903FC1 /* ExecutableAnalyzer.swift in Sources */,
 				2A7847F325998A1900903FC1 /* main.swift in Sources */,
+				2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */,
 				2A7847FC25998BB300903FC1 /* ExecutableCollector.swift in Sources */,
 				2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */,
+				2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

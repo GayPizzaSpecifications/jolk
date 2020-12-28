@@ -25,6 +25,7 @@ class StringsAnalyzer: ExecutableAnalyzer {
         try task.run()
 
         let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
+        task.waitUntilExit()
         let output = String(decoding: outputData, as: UTF8.self)
 
         for line in output.components(separatedBy: "\n") {
@@ -40,15 +41,21 @@ class StringsAnalyzer: ExecutableAnalyzer {
         let stringsInFile = try fetch(url)
 
         var likelyHasUsage = false
+        var hasHelpFlag = false
         for line in stringsInFile {
             if line.starts(with: "Usage: ") ||
                 line.starts(with: "usage: ") {
                 likelyHasUsage = true
-                break
+            }
+            
+            if line == "--help" {
+                likelyHasUsage = true
+                hasHelpFlag = true
             }
         }
 
         output.tag("strings.has-usage", AnyCodable(likelyHasUsage))
+        output.tag("strings.has-help-flag", AnyCodable(hasHelpFlag))
     }
 
     func name() -> String {
