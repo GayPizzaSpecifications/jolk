@@ -1,6 +1,6 @@
 //
 //  AnalysisOutputCollection.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //

@@ -1,6 +1,6 @@
 //
 //  LipoAnalyzer.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //
@@ -10,11 +10,11 @@ import Foundation
 
 class LipoAnalyzer: ExecutableAnalyzer {
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
-        let result = try ProcessRunner.fetchStandardOutput("/usr/bin/lipo", [
+        let result = try ProcessRunner.run("/usr/bin/lipo", [
             "-archs",
             url.path
         ])
-        let archInfoStrings = result.components(separatedBy: " ")
+        let archInfoStrings = result.standardOutput.components(separatedBy: " ")
         var arches: [String] = []
 
         for archInfo in archInfoStrings {
@@ -33,7 +33,7 @@ class LipoAnalyzer: ExecutableAnalyzer {
         if arches.isEmpty {
             output.isNotExecutable()
         } else {
-            output.tag("lipo.architectures", AnyCodable(arches))
+            output.set("lipo.architectures", AnyCodable(arches))
         }
     }
 

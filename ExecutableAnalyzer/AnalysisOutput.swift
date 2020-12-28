@@ -1,6 +1,6 @@
 //
 //  AnalysisOutput.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //
@@ -19,8 +19,24 @@ class AnalysisOutput {
         self.url = url
     }
 
-    func tag(_ key: String, _ value: AnyCodable) {
+    func set(_ key: String, _ value: AnyCodable) {
         attributes[key] = value
+    }
+
+    func get(_ key: String) -> AnyCodable {
+        return attributes[key] ?? AnyCodable()
+    }
+
+    func get(bool: String) -> Bool {
+        let x = get(bool)
+        if x.value is Bool {
+            return x.value as! Bool
+        }
+        return false
+    }
+
+    func has(_ key: String) -> Bool {
+        return attributes.keys.contains(key)
     }
 
     func isNotExecutable() {

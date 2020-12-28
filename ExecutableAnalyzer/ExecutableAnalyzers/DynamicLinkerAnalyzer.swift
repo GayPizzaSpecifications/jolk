@@ -1,6 +1,6 @@
 //
 //  DynamicLinkerAnalyzer.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/28/20.
 //
@@ -11,11 +11,11 @@ import ProcessRunner
 
 class DynamicLinkerAnalyzer: ExecutableAnalyzer {
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
-        let result = try ProcessRunner.fetchStandardOutput("/usr/bin/otool", [
+        let result = try ProcessRunner.run("/usr/bin/otool", [
             "-L",
             url.path
         ])
-        let lines = result.components(separatedBy: "\n")
+        let lines = result.standardOutput.components(separatedBy: "\n")
 
         var linkedFiles: [String] = []
         var linkedFrameworks: [String] = []
@@ -37,8 +37,8 @@ class DynamicLinkerAnalyzer: ExecutableAnalyzer {
                 linkedFrameworks.append(frameworkPath)
             }
         }
-        output.tag("dynamic-linker.linked-files", AnyCodable(linkedFiles))
-        output.tag("dynamic-linker.linked-frameworks", AnyCodable(linkedFrameworks))
+        output.set("dynamic-linker.linked-files", AnyCodable(linkedFiles))
+        output.set("dynamic-linker.linked-frameworks", AnyCodable(linkedFrameworks))
     }
 
     func name() -> String {

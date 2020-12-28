@@ -1,42 +1,54 @@
 //
 //  main.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //
 
 import Foundation
 
-let analyzers: [ExecutableAnalyzer] = [
-    LipoAnalyzer(),
-    StringsAnalyzer(),
-    ManPageAnalyzer(),
-    DynamicLinkerAnalyzer()
+let standardExecutablePaths = [
+    "/bin",
+    "/sbin",
+    "/usr/bin",
+    "/usr/sbin",
+    "/usr/libexec"
+]
+
+let standardLaunchdPaths = [
+    "/System/Library/LaunchAgents",
+    "/System/Library/LaunchDaemons"
 ]
 
 func main() throws {
-    let standardFilePaths = [
-        "/bin",
-        "/sbin",
-        "/usr/bin",
-        "/usr/sbin",
-        "/usr/libexec"
-    ]
-
     let executableCollector = ExecutableCollector()
-    for filePath in standardFilePaths {
+    for filePath in standardExecutablePaths {
         try executableCollector.scan(filePath)
     }
-
     executableCollector.sort()
 
-    let output = AnalysisOutputCollection()
+    let launchdCollector = LaunchdCollector()
+    for filePath in standardLaunchdPaths {
+        try launchdCollector.scan(filePath)
+    }
+
+    let analyzers: [ExecutableAnalyzer] = [
+        LipoAnalyzer(),
+        StringsAnalyzer(),
+        ManPageAnalyzer(),
+        DynamicLinkerAnalyzer(),
+        UsageExtractionAnalyzer(),
+        try LaunchdAnalyzer(launchdCollector)
+    ]
+
+    let outputCollection = AnalysisOutputCollection()
 
     let queue = OperationQueue()
     for urlForExecutable in executableCollector.executables {
         let url = urlForExecutable
-        let outputForFile = output.get(url)
+        let outputForFile = outputCollection.get(url)
         queue.addOperation {
+            let start = DispatchTime.now()
             print("analyze \(url.path)")
             for analyzer in analyzers {
                 do {
@@ -49,6 +61,10 @@ func main() throws {
                     print("error in analyzer \(analyzer.name()) for path \(url.path): \(error)")
                 }
             }
+            let end = DispatchTime.now()
+            let timeInNanoseconds = end.uptimeNanoseconds - start.uptimeNanoseconds
+            let ms = Double(timeInNanoseconds) / 1_000_000.0
+            print("analyzed \(url.path) \(String(format: "%.2f", ms))ms")
         }
     }
 
@@ -61,7 +77,7 @@ func main() throws {
                 .withoutEscapingSlashes,
                 .sortedKeys
             ]
-            let result = try jsonEncoder.encode(output.encode())
+            let result = try jsonEncoder.encode(outputCollection.encode())
             let resultToString = String(data: result, encoding: .utf8)!
             try resultToString.write(
                 to: URL(fileURLWithPath: "executables.json"),

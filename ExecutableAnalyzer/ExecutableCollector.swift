@@ -1,6 +1,6 @@
 //
 //  ExecutableCollector.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //
@@ -29,7 +29,7 @@ class ExecutableCollector {
 
     func sort() {
         executables.sort { a, b in
-            a.absoluteString.compare(b.absoluteString) == .orderedAscending
+            a.path.compare(b.path) == .orderedAscending
         }
     }
 }

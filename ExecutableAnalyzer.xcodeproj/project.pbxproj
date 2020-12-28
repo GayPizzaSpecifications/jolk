@@ -19,6 +19,9 @@
 		2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784811259999FB00903FC1 /* AnalysisOutput.swift */; };
 		2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */; };
 		2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */; };
+		2AF371EA259A59CF00D5640D /* UsageExtractionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */; };
+		2AF371F0259A668600D5640D /* LaunchdAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */; };
+		2AF371F3259A671200D5640D /* LaunchdCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371F2259A671200D5640D /* LaunchdCollector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +39,7 @@
 /* Begin PBXFileReference section */
 		2A280EBB2599DE810031F5EC /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
 		2A280EC02599E3910031F5EC /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
-		2A7847EF25998A1900903FC1 /* SystemExecutableAnalyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SystemExecutableAnalyzer; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7847EF25998A1900903FC1 /* ExecutableAnalyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExecutableAnalyzer; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7847F225998A1900903FC1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableCollector.swift; sourceTree = "<group>"; };
 		2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsAnalyzer.swift; sourceTree = "<group>"; };
@@ -46,6 +49,9 @@
 		2A784811259999FB00903FC1 /* AnalysisOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisOutput.swift; sourceTree = "<group>"; };
 		2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManPageAnalyzer.swift; sourceTree = "<group>"; };
 		2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkerAnalyzer.swift; sourceTree = "<group>"; };
+		2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageExtractionAnalyzer.swift; sourceTree = "<group>"; };
+		2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdAnalyzer.swift; sourceTree = "<group>"; };
+		2AF371F2259A671200D5640D /* LaunchdCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdCollector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +69,7 @@
 		2A7847E625998A1900903FC1 = {
 			isa = PBXGroup;
 			children = (
-				2A7847F125998A1900903FC1 /* SystemExecutableAnalyzer */,
+				2A7847F125998A1900903FC1 /* ExecutableAnalyzer */,
 				2A7847F025998A1900903FC1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,16 +77,17 @@
 		2A7847F025998A1900903FC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A7847EF25998A1900903FC1 /* SystemExecutableAnalyzer */,
+				2A7847EF25998A1900903FC1 /* ExecutableAnalyzer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A7847F125998A1900903FC1 /* SystemExecutableAnalyzer */ = {
+		2A7847F125998A1900903FC1 /* ExecutableAnalyzer */ = {
 			isa = PBXGroup;
 			children = (
 				2A7847F225998A1900903FC1 /* main.swift */,
 				2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */,
+				2AF371F2259A671200D5640D /* LaunchdCollector.swift */,
 				2A7848022599917F00903FC1 /* AnalysisOutputCollection.swift */,
 				2A784811259999FB00903FC1 /* AnalysisOutput.swift */,
 				2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */,
@@ -88,7 +95,7 @@
 				2A280EC02599E3910031F5EC /* UnfairLock.swift */,
 				2A7848162599A17700903FC1 /* ExecutableAnalyzers */,
 			);
-			path = SystemExecutableAnalyzer;
+			path = ExecutableAnalyzer;
 			sourceTree = "<group>";
 		};
 		2A7848162599A17700903FC1 /* ExecutableAnalyzers */ = {
@@ -98,6 +105,8 @@
 				2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */,
 				2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */,
 				2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */,
+				2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */,
+				2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */,
 			);
 			path = ExecutableAnalyzers;
 			sourceTree = "<group>";
@@ -105,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A7847EE25998A1900903FC1 /* SystemExecutableAnalyzer */ = {
+		2A7847EE25998A1900903FC1 /* ExecutableAnalyzer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "SystemExecutableAnalyzer" */;
+			buildConfigurationList = 2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "ExecutableAnalyzer" */;
 			buildPhases = (
 				2A7847EB25998A1900903FC1 /* Sources */,
 				2A7847EC25998A1900903FC1 /* Frameworks */,
@@ -117,12 +126,12 @@
 			);
 			dependencies = (
 			);
-			name = SystemExecutableAnalyzer;
+			name = ExecutableAnalyzer;
 			packageProductDependencies = (
 				2A784806259994C100903FC1 /* AnyCodable */,
 			);
 			productName = SystemExecutableAnalyzer;
-			productReference = 2A7847EF25998A1900903FC1 /* SystemExecutableAnalyzer */;
+			productReference = 2A7847EF25998A1900903FC1 /* ExecutableAnalyzer */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -139,7 +148,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "SystemExecutableAnalyzer" */;
+			buildConfigurationList = 2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "ExecutableAnalyzer" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -155,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A7847EE25998A1900903FC1 /* SystemExecutableAnalyzer */,
+				2A7847EE25998A1900903FC1 /* ExecutableAnalyzer */,
 			);
 		};
 /* End PBXProject section */
@@ -166,15 +175,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A78480A259998A000903FC1 /* LipoAnalyzer.swift in Sources */,
+				2AF371F3259A671200D5640D /* LaunchdCollector.swift in Sources */,
 				2A7848032599917F00903FC1 /* AnalysisOutputCollection.swift in Sources */,
 				2A7847FF25998EE900903FC1 /* StringsAnalyzer.swift in Sources */,
 				2A280EBC2599DE810031F5EC /* ProcessRunner.swift in Sources */,
+				2AF371EA259A59CF00D5640D /* UsageExtractionAnalyzer.swift in Sources */,
 				2A78480D2599998F00903FC1 /* ExecutableAnalyzer.swift in Sources */,
 				2A7847F325998A1900903FC1 /* main.swift in Sources */,
 				2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */,
 				2A280EC12599E3910031F5EC /* UnfairLock.swift in Sources */,
 				2A7847FC25998BB300903FC1 /* ExecutableCollector.swift in Sources */,
 				2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */,
+				2AF371F0259A668600D5640D /* LaunchdAnalyzer.swift in Sources */,
 				2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,7 +336,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "SystemExecutableAnalyzer" */ = {
+		2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "ExecutableAnalyzer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A7847F425998A1900903FC1 /* Debug */,
@@ -333,7 +345,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "SystemExecutableAnalyzer" */ = {
+		2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "ExecutableAnalyzer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A7847F725998A1900903FC1 /* Debug */,

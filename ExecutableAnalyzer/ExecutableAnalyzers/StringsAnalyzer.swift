@@ -1,6 +1,6 @@
 //
 //  StringsAnalyzer.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //
@@ -11,12 +11,12 @@ import ProcessRunner
 
 class StringsAnalyzer: ExecutableAnalyzer {
     private func fetch(_ url: URL) throws -> [String] {
-        let result = try ProcessRunner.fetchStandardOutput("/usr/bin/strings", [
+        let result = try ProcessRunner.run("/usr/bin/strings", [
             url.path
         ])
         var stringsInFile: [String] = []
 
-        for line in result.components(separatedBy: "\n") {
+        for line in result.standardOutput.components(separatedBy: "\n") {
             if !line.isEmpty {
                 stringsInFile.append(line)
             }
@@ -42,8 +42,8 @@ class StringsAnalyzer: ExecutableAnalyzer {
             }
         }
 
-        output.tag("strings.has-usage", AnyCodable(likelyHasUsage))
-        output.tag("strings.has-help-flag", AnyCodable(hasHelpFlag))
+        output.set("strings.likely.has-usage", AnyCodable(likelyHasUsage))
+        output.set("strings.likely.has-help-flag", AnyCodable(hasHelpFlag))
     }
 
     func name() -> String {

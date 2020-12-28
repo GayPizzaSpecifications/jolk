@@ -1,6 +1,6 @@
 //
 //  UnfairLock.swift
-//  SystemExecutableAnalyzer
+//  ExecutableAnalyzer
 //
 //  Created by Kenneth Endfinger on 12/28/20.
 //
