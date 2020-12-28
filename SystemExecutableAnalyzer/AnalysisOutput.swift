@@ -11,6 +11,8 @@ import Foundation
 class AnalysisOutput {
     let collection: AnalysisOutputCollection
     let url: URL
+    
+    var attributes: [String: AnyCodable] = [:]
 
     init(_ collection: AnalysisOutputCollection, _ url: URL) {
         self.collection = collection
@@ -18,14 +20,14 @@ class AnalysisOutput {
     }
 
     func tag(_ key: String, _ value: AnyCodable) {
-        collection.tag(url.path, key, value)
+        attributes[key] = value
     }
 
     func isNotExecutable() {
-        collection.output.removeValue(forKey: url.path)
+        collection.remove(self)
     }
 
     func isInCollection() -> Bool {
-        return collection.output.keys.contains(url.path)
+        return collection.has(self)
     }
 }

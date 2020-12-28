@@ -6,15 +6,16 @@
 //
 
 import AnyCodable
-import ProcessRunner
 import Foundation
 
 class LipoAnalyzer: ExecutableAnalyzer {
-    static let lipoExecutableUrl = URL(fileURLWithPath: "/usr/bin/lipo")
-
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
-        let result = try system(command: "lipo", "-archs", "\(url.path)", captureOutput: true)
-        let archInfoStrings = result.standardOutput.components(separatedBy: " ")
+        let process = ProcessRunner("/usr/bin/lipo", [
+            "-archs",
+            url.path
+        ])
+        try process.run()
+        let archInfoStrings = process.standardOutput!.components(separatedBy: " ")
         var arches: [String] = []
 
         for archInfo in archInfoStrings {

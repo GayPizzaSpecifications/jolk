@@ -9,17 +9,42 @@ import AnyCodable
 import Foundation
 
 class AnalysisOutputCollection {
-    var output: [String: [String: AnyCodable]] = [:]
+    private var outputs: [String: AnalysisOutput] = [:]
+    private var lock = os_unfair_lock()
 
-    func tag(_ path: String, _ key: String, _ value: AnyCodable) {
-        if output[path] == nil {
-            output[path] = [:]
+    func get(_ url: URL) -> AnalysisOutput {
+        os_unfair_lock_lock(&lock)
+        let maybeExistingOutput = outputs[url.path]
+        if maybeExistingOutput != nil {
+            os_unfair_lock_unlock(&lock)
+            return maybeExistingOutput!
         }
-
-        output[path]![key] = value
+        let newOutput = AnalysisOutput(self, url)
+        outputs[url.path] = newOutput
+        os_unfair_lock_unlock(&lock)
+        return newOutput
     }
-
-    func forExecutable(_ url: URL) -> AnalysisOutput {
-        return AnalysisOutput(self, url)
+    
+    func remove(_ output: AnalysisOutput) {
+        os_unfair_lock_lock(&lock)
+        outputs.removeValue(forKey: output.url.path)
+        os_unfair_lock_unlock(&lock)
+    }
+    
+    func has(_ output: AnalysisOutput) -> Bool {
+        os_unfair_lock_lock(&lock)
+        let result = outputs[output.url.path] != nil
+        os_unfair_lock_unlock(&lock)
+        return result
+    }
+    
+    func encode() -> [String:[String:AnyCodable]] {
+        os_unfair_lock_lock(&lock)
+        var result: [String:[String:AnyCodable]] = [:]
+        for key in outputs.keys {
+            result[key] = outputs[key]!.attributes
+        }
+        os_unfair_lock_unlock(&lock)
+        return result
     }
 }

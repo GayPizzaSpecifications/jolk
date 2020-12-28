@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A280EBC2599DE810031F5EC /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EBB2599DE810031F5EC /* ProcessRunner.swift */; };
 		2A7847F325998A1900903FC1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847F225998A1900903FC1 /* main.swift */; };
 		2A7847FC25998BB300903FC1 /* ExecutableCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */; };
 		2A7847FF25998EE900903FC1 /* StringsAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */; };
@@ -17,7 +18,6 @@
 		2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784811259999FB00903FC1 /* AnalysisOutput.swift */; };
 		2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */; };
 		2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */; };
-		2AF371E52599BB3800D5640D /* ProcessRunner in Frameworks */ = {isa = PBXBuildFile; productRef = 2AF371E42599BB3800D5640D /* ProcessRunner */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +33,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2A280EBB2599DE810031F5EC /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
 		2A7847EF25998A1900903FC1 /* SystemExecutableAnalyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SystemExecutableAnalyzer; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7847F225998A1900903FC1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableCollector.swift; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AF371E52599BB3800D5640D /* ProcessRunner in Frameworks */,
 				2A784807259994C100903FC1 /* AnyCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +82,7 @@
 				2A7848022599917F00903FC1 /* AnalysisOutputCollection.swift */,
 				2A784811259999FB00903FC1 /* AnalysisOutput.swift */,
 				2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */,
+				2A280EBB2599DE810031F5EC /* ProcessRunner.swift */,
 				2A7848162599A17700903FC1 /* ExecutableAnalyzers */,
 			);
 			path = SystemExecutableAnalyzer;
@@ -116,7 +117,6 @@
 			name = SystemExecutableAnalyzer;
 			packageProductDependencies = (
 				2A784806259994C100903FC1 /* AnyCodable */,
-				2AF371E42599BB3800D5640D /* ProcessRunner */,
 			);
 			productName = SystemExecutableAnalyzer;
 			productReference = 2A7847EF25998A1900903FC1 /* SystemExecutableAnalyzer */;
@@ -147,7 +147,6 @@
 			mainGroup = 2A7847E625998A1900903FC1;
 			packageReferences = (
 				2A784805259994C100903FC1 /* XCRemoteSwiftPackageReference "AnyCodable" */,
-				2AF371E32599BB3800D5640D /* XCRemoteSwiftPackageReference "ProcessRunner" */,
 			);
 			productRefGroup = 2A7847F025998A1900903FC1 /* Products */;
 			projectDirPath = "";
@@ -166,6 +165,7 @@
 				2A78480A259998A000903FC1 /* LipoAnalyzer.swift in Sources */,
 				2A7848032599917F00903FC1 /* AnalysisOutputCollection.swift in Sources */,
 				2A7847FF25998EE900903FC1 /* StringsAnalyzer.swift in Sources */,
+				2A280EBC2599DE810031F5EC /* ProcessRunner.swift in Sources */,
 				2A78480D2599998F00903FC1 /* ExecutableAnalyzer.swift in Sources */,
 				2A7847F325998A1900903FC1 /* main.swift in Sources */,
 				2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */,
@@ -299,7 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FQW5YTQR8;
 				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -311,7 +311,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FQW5YTQR8;
 				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -349,14 +349,6 @@
 				minimumVersion = 0.4.0;
 			};
 		};
-		2AF371E32599BB3800D5640D /* XCRemoteSwiftPackageReference "ProcessRunner" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/eneko/ProcessRunner.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.1.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -364,11 +356,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A784805259994C100903FC1 /* XCRemoteSwiftPackageReference "AnyCodable" */;
 			productName = AnyCodable;
-		};
-		2AF371E42599BB3800D5640D /* ProcessRunner */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2AF371E32599BB3800D5640D /* XCRemoteSwiftPackageReference "ProcessRunner" */;
-			productName = ProcessRunner;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

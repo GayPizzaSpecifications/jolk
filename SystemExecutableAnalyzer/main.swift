@@ -32,12 +32,11 @@ func main() throws {
 
     let output = AnalysisOutputCollection()
 
-    let queue = DispatchQueue.main
-    let group = DispatchGroup()
+    let queue = OperationQueue()
     for urlForExecutable in executableCollector.executables {
         let url = urlForExecutable
-        let outputForFile = output.forExecutable(url)
-        queue.async(group: group) {
+        let outputForFile = output.get(url)
+        queue.addOperation {
             print("analyze \(url.path)")
             for analyzer in analyzers {
                 do {
@@ -53,15 +52,16 @@ func main() throws {
         }
     }
 
-    group.notify(queue: queue) {
+    queue.addBarrierBlock {
         do {
             let jsonEncoder = JSONEncoder()
             jsonEncoder.dataEncodingStrategy = .base64
             jsonEncoder.outputFormatting = [
                 .prettyPrinted,
-                .withoutEscapingSlashes
+                .withoutEscapingSlashes,
+                .sortedKeys
             ]
-            let result = try jsonEncoder.encode(output.output)
+            let result = try jsonEncoder.encode(output.encode())
             let resultToString = String(data: result, encoding: .utf8)!
             try resultToString.write(
                 to: URL(fileURLWithPath: "executables.json"),
@@ -72,6 +72,7 @@ func main() throws {
             print("error: \(error)")
             exit(1)
         }
+        exit(0)
     }
 
     dispatchMain()

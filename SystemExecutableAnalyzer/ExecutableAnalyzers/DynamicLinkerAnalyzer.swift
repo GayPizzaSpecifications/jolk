@@ -10,11 +10,13 @@ import Foundation
 import ProcessRunner
 
 class DynamicLinkerAnalyzer: ExecutableAnalyzer {
-    static let otoolExecutableUrl = URL(fileURLWithPath: "/usr/bin/otool")
-
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
-        let result = try system(command: "otool", "-L", "\(url.path)", captureOutput: true)
-        let lines = result.standardOutput.components(separatedBy: "\n")
+        let process = ProcessRunner("/usr/bin/otool", [
+            "-L",
+            url.path
+        ])
+        try process.run()
+        let lines = process.standardOutput!.components(separatedBy: "\n")
 
         var linkedFiles: [String] = []
         var linkedFrameworks: [String] = []
