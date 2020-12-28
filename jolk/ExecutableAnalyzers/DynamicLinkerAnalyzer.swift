@@ -7,7 +7,6 @@
 
 import AnyCodable
 import Foundation
-import ProcessRunner
 
 class DynamicLinkerAnalyzer: ExecutableAnalyzer {
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {

@@ -7,7 +7,6 @@
 
 import AnyCodable
 import Foundation
-import ProcessRunner
 
 class StringsAnalyzer: ExecutableAnalyzer {
     private func fetch(_ url: URL) throws -> [String] {
