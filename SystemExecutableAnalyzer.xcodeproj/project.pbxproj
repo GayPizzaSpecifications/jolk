@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A280EBC2599DE810031F5EC /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EBB2599DE810031F5EC /* ProcessRunner.swift */; };
+		2A280EC12599E3910031F5EC /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EC02599E3910031F5EC /* UnfairLock.swift */; };
 		2A7847F325998A1900903FC1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847F225998A1900903FC1 /* main.swift */; };
 		2A7847FC25998BB300903FC1 /* ExecutableCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */; };
 		2A7847FF25998EE900903FC1 /* StringsAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		2A280EBB2599DE810031F5EC /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		2A280EC02599E3910031F5EC /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
 		2A7847EF25998A1900903FC1 /* SystemExecutableAnalyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SystemExecutableAnalyzer; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7847F225998A1900903FC1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableCollector.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				2A784811259999FB00903FC1 /* AnalysisOutput.swift */,
 				2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */,
 				2A280EBB2599DE810031F5EC /* ProcessRunner.swift */,
+				2A280EC02599E3910031F5EC /* UnfairLock.swift */,
 				2A7848162599A17700903FC1 /* ExecutableAnalyzers */,
 			);
 			path = SystemExecutableAnalyzer;
@@ -169,6 +172,7 @@
 				2A78480D2599998F00903FC1 /* ExecutableAnalyzer.swift in Sources */,
 				2A7847F325998A1900903FC1 /* main.swift in Sources */,
 				2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */,
+				2A280EC12599E3910031F5EC /* UnfairLock.swift in Sources */,
 				2A7847FC25998BB300903FC1 /* ExecutableCollector.swift in Sources */,
 				2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */,
 				2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */,

@@ -10,12 +10,11 @@ import Foundation
 
 class LipoAnalyzer: ExecutableAnalyzer {
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
-        let process = ProcessRunner("/usr/bin/lipo", [
+        let result = try ProcessRunner.fetchStandardOutput("/usr/bin/lipo", [
             "-archs",
             url.path
         ])
-        try process.run()
-        let archInfoStrings = process.standardOutput!.components(separatedBy: " ")
+        let archInfoStrings = result.components(separatedBy: " ")
         var arches: [String] = []
 
         for archInfo in archInfoStrings {

@@ -11,7 +11,7 @@ import Foundation
 class AnalysisOutput {
     let collection: AnalysisOutputCollection
     let url: URL
-    
+
     var attributes: [String: AnyCodable] = [:]
 
     init(_ collection: AnalysisOutputCollection, _ url: URL) {

@@ -9,22 +9,22 @@ import Foundation
 
 class ProcessRunner {
     let process: Process
-    
+
     var standardOutput: String?
-    
+
     init(_ command: String, _ arguments: [String]) {
-        self.process = Process()
+        process = Process()
         process.executableURL = URL(fileURLWithPath: command)
         process.arguments = arguments
     }
-    
+
     func run() throws {
         let standardOutputPipe = Pipe()
         process.standardOutput = standardOutputPipe
         process.standardError = Pipe()
-        
+
         try process.run()
-        
+
         let outputData = try standardOutputPipe.fileHandleForReading.readToEnd()
         process.waitUntilExit()
         if outputData != nil {
@@ -32,5 +32,11 @@ class ProcessRunner {
         } else {
             standardOutput = ""
         }
+    }
+
+    static func fetchStandardOutput(_ command: String, _ arguments: [String]) throws -> String {
+        let runner = ProcessRunner(command, arguments)
+        try runner.run()
+        return runner.standardOutput!
     }
 }

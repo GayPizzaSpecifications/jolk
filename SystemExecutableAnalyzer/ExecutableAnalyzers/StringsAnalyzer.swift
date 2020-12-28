@@ -11,13 +11,12 @@ import ProcessRunner
 
 class StringsAnalyzer: ExecutableAnalyzer {
     private func fetch(_ url: URL) throws -> [String] {
-        let process = ProcessRunner("/usr/bin/strings", [
+        let result = try ProcessRunner.fetchStandardOutput("/usr/bin/strings", [
             url.path
         ])
-        try process.run()
         var stringsInFile: [String] = []
 
-        for line in process.standardOutput!.components(separatedBy: "\n") {
+        for line in result.components(separatedBy: "\n") {
             if !line.isEmpty {
                 stringsInFile.append(line)
             }
