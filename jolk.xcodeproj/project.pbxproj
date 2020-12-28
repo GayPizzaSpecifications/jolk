@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		2A280EBB2599DE810031F5EC /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
 		2A280EC02599E3910031F5EC /* UnfairLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnfairLock.swift; sourceTree = "<group>"; };
-		2A7847EF25998A1900903FC1 /* ExecutableAnalyzer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ExecutableAnalyzer; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7847EF25998A1900903FC1 /* jolk */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = jolk; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7847F225998A1900903FC1 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutableCollector.swift; sourceTree = "<group>"; };
 		2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsAnalyzer.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		2A7847E625998A1900903FC1 = {
 			isa = PBXGroup;
 			children = (
-				2A7847F125998A1900903FC1 /* ExecutableAnalyzer */,
+				2A7847F125998A1900903FC1 /* jolk */,
 				2A7847F025998A1900903FC1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,12 +77,12 @@
 		2A7847F025998A1900903FC1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2A7847EF25998A1900903FC1 /* ExecutableAnalyzer */,
+				2A7847EF25998A1900903FC1 /* jolk */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A7847F125998A1900903FC1 /* ExecutableAnalyzer */ = {
+		2A7847F125998A1900903FC1 /* jolk */ = {
 			isa = PBXGroup;
 			children = (
 				2A7847F225998A1900903FC1 /* main.swift */,
@@ -95,7 +95,7 @@
 				2A280EC02599E3910031F5EC /* UnfairLock.swift */,
 				2A7848162599A17700903FC1 /* ExecutableAnalyzers */,
 			);
-			path = ExecutableAnalyzer;
+			path = jolk;
 			sourceTree = "<group>";
 		};
 		2A7848162599A17700903FC1 /* ExecutableAnalyzers */ = {
@@ -114,9 +114,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2A7847EE25998A1900903FC1 /* ExecutableAnalyzer */ = {
+		2A7847EE25998A1900903FC1 /* jolk */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "ExecutableAnalyzer" */;
+			buildConfigurationList = 2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "jolk" */;
 			buildPhases = (
 				2A7847EB25998A1900903FC1 /* Sources */,
 				2A7847EC25998A1900903FC1 /* Frameworks */,
@@ -126,12 +126,12 @@
 			);
 			dependencies = (
 			);
-			name = ExecutableAnalyzer;
+			name = jolk;
 			packageProductDependencies = (
 				2A784806259994C100903FC1 /* AnyCodable */,
 			);
 			productName = SystemExecutableAnalyzer;
-			productReference = 2A7847EF25998A1900903FC1 /* ExecutableAnalyzer */;
+			productReference = 2A7847EF25998A1900903FC1 /* jolk */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -148,7 +148,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "ExecutableAnalyzer" */;
+			buildConfigurationList = 2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "jolk" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -164,7 +164,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2A7847EE25998A1900903FC1 /* ExecutableAnalyzer */,
+				2A7847EE25998A1900903FC1 /* jolk */,
 			);
 		};
 /* End PBXProject section */
@@ -336,7 +336,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "ExecutableAnalyzer" */ = {
+		2A7847EA25998A1900903FC1 /* Build configuration list for PBXProject "jolk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A7847F425998A1900903FC1 /* Debug */,
@@ -345,7 +345,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "ExecutableAnalyzer" */ = {
+		2A7847F625998A1900903FC1 /* Build configuration list for PBXNativeTarget "jolk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2A7847F725998A1900903FC1 /* Debug */,

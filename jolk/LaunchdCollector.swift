@@ -1,6 +1,6 @@
 //
 //  LaunchdCollector.swift
-//  ExecutableAnalyzer
+//  jolk
 //
 //  Created by Kenneth Endfinger on 12/28/20.
 //

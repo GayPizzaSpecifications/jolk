@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2A7847EE25998A1900903FC1"
-               BuildableName = "ExecutableAnalyzer"
-               BlueprintName = "ExecutableAnalyzer"
-               ReferencedContainer = "container:ExecutableAnalyzer.xcodeproj">
+               BuildableName = "jolk"
+               BlueprintName = "jolk"
+               ReferencedContainer = "container:jolk.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7847EE25998A1900903FC1"
-            BuildableName = "ExecutableAnalyzer"
-            BlueprintName = "ExecutableAnalyzer"
-            ReferencedContainer = "container:ExecutableAnalyzer.xcodeproj">
+            BuildableName = "jolk"
+            BlueprintName = "jolk"
+            ReferencedContainer = "container:jolk.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -63,9 +63,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2A7847EE25998A1900903FC1"
-            BuildableName = "ExecutableAnalyzer"
-            BlueprintName = "ExecutableAnalyzer"
-            ReferencedContainer = "container:ExecutableAnalyzer.xcodeproj">
+            BuildableName = "jolk"
+            BlueprintName = "jolk"
+            ReferencedContainer = "container:jolk.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

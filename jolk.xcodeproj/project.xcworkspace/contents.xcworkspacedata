@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/kendfinger/Code/Apple/SystemExecutableAnalyzer/ExecutableAnalyzer.xcodeproj">
+      location = "self:/Users/kendfinger/Code/Apple/SystemExecutableAnalyzer/jolk.xcodeproj">
    </FileRef>
 </Workspace>

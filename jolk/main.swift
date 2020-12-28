@@ -1,6 +1,6 @@
 //
 //  main.swift
-//  ExecutableAnalyzer
+//  jolk
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //
@@ -64,7 +64,7 @@ func main() throws {
             let end = DispatchTime.now()
             let timeInNanoseconds = end.uptimeNanoseconds - start.uptimeNanoseconds
             let ms = Double(timeInNanoseconds) / 1_000_000.0
-            print("analyzed \(url.path) \(String(format: "%.2f", ms))ms")
+            print("complete \(url.path) \(String(format: "%.2f", ms))ms")
         }
     }
 
