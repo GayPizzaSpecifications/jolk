@@ -26,4 +26,10 @@ public class ExecutableCollector {
             }
         }
     }
+
+    public func sort() {
+        executables.sort { a, b in
+            a.absoluteString.compare(b.absoluteString) == .orderedAscending
+        }
+    }
 }

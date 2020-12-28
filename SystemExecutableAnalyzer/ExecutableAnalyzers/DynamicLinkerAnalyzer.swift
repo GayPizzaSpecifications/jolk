@@ -7,28 +7,14 @@
 
 import AnyCodable
 import Foundation
+import ProcessRunner
 
 class DynamicLinkerAnalyzer: ExecutableAnalyzer {
     static let otoolExecutableUrl = URL(fileURLWithPath: "/usr/bin/otool")
 
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
-        let task = Process()
-        task.executableURL = DynamicLinkerAnalyzer.otoolExecutableUrl
-        task.arguments = [
-            "-L",
-            url.path
-        ]
-
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
-
-        try task.run()
-
-        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-        let outputString = String(data: outputData, encoding: .utf8)!
-        let lines = outputString.components(separatedBy: "\n")
+        let result = try system(command: "otool", "-L", "\(url.path)", captureOutput: true)
+        let lines = result.standardOutput.components(separatedBy: "\n")
 
         var linkedFiles: [String] = []
         var linkedFrameworks: [String] = []

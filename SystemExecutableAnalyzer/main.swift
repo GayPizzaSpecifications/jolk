@@ -28,6 +28,8 @@ func main() throws {
         try executableCollector.scan(filePath)
     }
 
+    executableCollector.sort()
+
     let output = AnalysisOutputCollection()
 
     let queue = DispatchQueue.main

@@ -7,28 +7,14 @@
 
 import AnyCodable
 import Foundation
+import ProcessRunner
 
 class StringsAnalyzer: ExecutableAnalyzer {
-    static let stringsExecutableUrl = URL(fileURLWithPath: "/usr/bin/strings")
-
     private func fetch(_ url: URL) throws -> [String] {
+        let result = try system(command: "strings '\(url.path)' | grep -i 'usage:'", captureOutput: true)
         var stringsInFile: [String] = []
 
-        let task = Process()
-        task.executableURL = StringsAnalyzer.stringsExecutableUrl
-        task.arguments = [url.path]
-        let outputPipe = Pipe()
-        let errorPipe = Pipe()
-        task.standardOutput = outputPipe
-        task.standardError = errorPipe
-
-        try task.run()
-
-        let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
-        task.waitUntilExit()
-        let output = String(decoding: outputData, as: UTF8.self)
-
-        for line in output.components(separatedBy: "\n") {
+        for line in result.standardOutput.components(separatedBy: "\n") {
             if !line.isEmpty {
                 stringsInFile.append(line)
             }
