@@ -47,7 +47,7 @@ class StringsAnalyzer: ExecutableAnalyzer {
                 line.starts(with: "usage: ") {
                 likelyHasUsage = true
             }
-            
+
             if line == "--help" {
                 likelyHasUsage = true
                 hasHelpFlag = true

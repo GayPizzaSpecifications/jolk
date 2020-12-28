@@ -10,7 +10,7 @@ import Foundation
 
 class DynamicLinkerAnalyzer: ExecutableAnalyzer {
     static let otoolExecutableUrl = URL(fileURLWithPath: "/usr/bin/otool")
-    
+
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
         let task = Process()
         task.executableURL = DynamicLinkerAnalyzer.otoolExecutableUrl
@@ -29,7 +29,7 @@ class DynamicLinkerAnalyzer: ExecutableAnalyzer {
         let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
         let outputString = String(data: outputData, encoding: .utf8)!
         let lines = outputString.components(separatedBy: "\n")
-        
+
         var linkedFiles: [String] = []
         var linkedFrameworks: [String] = []
         for line in lines {
@@ -37,13 +37,13 @@ class DynamicLinkerAnalyzer: ExecutableAnalyzer {
                 !line.contains("(") {
                 continue
             }
-            
+
             let linkedFilePath = line.components(separatedBy: "(").first!.trimmingCharacters(in: [
                 " ",
                 "\t"
             ])
             linkedFiles.append(linkedFilePath)
-            
+
             if linkedFilePath.contains(".framework/") {
                 let frameworkBasePath = linkedFilePath.components(separatedBy: ".framework/").first!
                 let frameworkPath = "\(frameworkBasePath).framework"
@@ -58,4 +58,3 @@ class DynamicLinkerAnalyzer: ExecutableAnalyzer {
         return "dynamic-linker"
     }
 }
-

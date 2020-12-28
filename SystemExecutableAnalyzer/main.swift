@@ -50,7 +50,7 @@ func main() throws {
             }
         }
     }
-    
+
     group.notify(queue: queue) {
         do {
             let jsonEncoder = JSONEncoder()
@@ -71,7 +71,7 @@ func main() throws {
             exit(1)
         }
     }
-    
+
     dispatchMain()
 }
 

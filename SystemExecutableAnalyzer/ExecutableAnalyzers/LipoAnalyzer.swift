@@ -25,7 +25,7 @@ class LipoAnalyzer: ExecutableAnalyzer {
         task.standardError = errorPipe
 
         try task.run()
-        
+
         let outputData = outputPipe.fileHandleForReading.readDataToEndOfFile()
         task.waitUntilExit()
         let outputString = String(data: outputData, encoding: .utf8)!
@@ -44,7 +44,7 @@ class LipoAnalyzer: ExecutableAnalyzer {
 
             arches.append(cleanArchInfo)
         }
-        
+
         if arches.isEmpty {
             output.isNotExecutable()
         } else {

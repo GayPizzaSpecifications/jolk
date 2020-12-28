@@ -14,7 +14,7 @@ class ManPageAnalyzer: ExecutableAnalyzer {
             output.tag("man-page.exists", AnyCodable(false))
             return
         }
-        
+
         let manPageUrl = URL(fileURLWithPath: "/usr/share/man/man1/\(executableFileName).1")
         output.tag("man-page.exists", AnyCodable(FileManager.default.fileExists(atPath: manPageUrl.path)))
     }
@@ -23,4 +23,3 @@ class ManPageAnalyzer: ExecutableAnalyzer {
         return "man-page"
     }
 }
-
