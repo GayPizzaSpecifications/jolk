@@ -28,12 +28,17 @@ class DynamicLinkerAnalyzer: ExecutableAnalyzer {
                 " ",
                 "\t"
             ])
-            linkedFiles.append(linkedFilePath)
+
+            if !linkedFiles.contains(linkedFilePath) {
+                linkedFiles.append(linkedFilePath)
+            }
 
             if linkedFilePath.contains(".framework/") {
                 let frameworkBasePath = linkedFilePath.components(separatedBy: ".framework/").first!
                 let frameworkPath = "\(frameworkBasePath).framework"
-                linkedFrameworks.append(frameworkPath)
+                if !linkedFrameworks.contains(frameworkPath) {
+                    linkedFrameworks.append(frameworkPath)
+                }
             }
         }
         output.set("dynamic-linker.linked-files", AnyCodable(linkedFiles))

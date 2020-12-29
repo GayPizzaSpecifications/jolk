@@ -75,8 +75,8 @@
 		2A280ED1259ACEB40031F5EC /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				2A280EBB2599DE810031F5EC /* ProcessRunner.swift */,
 				2A280EC02599E3910031F5EC /* UnfairLock.swift */,
+				2A280EBB2599DE810031F5EC /* ProcessRunner.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -141,12 +141,12 @@
 			isa = PBXGroup;
 			children = (
 				2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */,
-				2A784809259998A000903FC1 /* LipoAnalyzer.swift */,
-				2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */,
-				2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */,
 				2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */,
-				2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */,
 				2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */,
+				2A784809259998A000903FC1 /* LipoAnalyzer.swift */,
+				2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */,
+				2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */,
+				2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */,
 			);
 			path = Analyzers;
 			sourceTree = "<group>";

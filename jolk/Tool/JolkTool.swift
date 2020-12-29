@@ -9,7 +9,12 @@ import ArgumentParser
 import Foundation
 
 struct JolkTool: ParsableCommand {
-    @Flag(help: "Quiet Mode")
+    static var configuration = CommandConfiguration(
+        commandName: "jolk",
+        abstract: "macOS System Executable Analyzer"
+    )
+
+    @Flag(name: .shortAndLong, help: "Quiet Mode")
     var quiet: Bool = false
 
     @Option(name: .shortAndLong, help: "Maximum Current Jobs")
