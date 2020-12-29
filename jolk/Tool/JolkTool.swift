@@ -11,13 +11,13 @@ import Foundation
 struct JolkTool: ParsableCommand {
     @Flag(help: "Quiet Mode")
     var quiet: Bool = false
-    
+
     @Option(name: .shortAndLong, help: "Maximum Current Jobs")
     var jobs: Int = 12
-    
+
     @Option(name: .shortAndLong, help: "Output File")
     var output: String = "executables.json"
-    
+
     func run() throws {
         let executableCollector = ExecutableCollector()
         for filePath in JolkDefaults.standardExecutablePaths {
@@ -57,7 +57,7 @@ struct JolkTool: ParsableCommand {
 
         dispatchMain()
     }
-    
+
     func analyze(_ url: URL, _ analyzers: [ExecutableAnalyzer], _ output: AnalysisOutput) {
         let start = DispatchTime.now()
         if !quiet {
@@ -83,7 +83,7 @@ struct JolkTool: ParsableCommand {
             print("complete \(url.path) \(String(format: "%.2f", ms))ms")
         }
     }
-    
+
     func save(_ outputCollection: AnalysisOutputCollection) {
         do {
             let jsonEncoder = JSONEncoder()
@@ -96,7 +96,7 @@ struct JolkTool: ParsableCommand {
             let result = try jsonEncoder.encode(outputCollection.encode())
             let resultToString = String(data: result, encoding: .utf8)!
             try resultToString.write(
-                to: URL(fileURLWithPath: self.output),
+                to: URL(fileURLWithPath: output),
                 atomically: true,
                 encoding: .utf8
             )
