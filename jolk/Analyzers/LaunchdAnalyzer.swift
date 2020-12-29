@@ -11,56 +11,12 @@ import Foundation
 class LaunchdAnalyzer: ExecutableAnalyzer {
     let launchdCollector: LaunchdCollector
 
-    var lock = UnfairLock()
-    var cache: [String: [LaunchdEntry]] = [:]
-
     init(_ launchdCollector: LaunchdCollector) throws {
         self.launchdCollector = launchdCollector
-
-        try prime()
-    }
-
-    private func prime() throws {
-        lock.lock()
-        if !cache.isEmpty {
-            return
-        }
-
-        for plistUrl in launchdCollector.plists {
-            guard let plist = NSDictionary(contentsOf: plistUrl) else {
-                continue
-            }
-
-            var program = plist.value(forKey: "Program") as! String?
-            if program == nil {
-                let args = plist.value(forKey: "ProgramArguments") as! [String]?
-                if args != nil {
-                    let firstArgument = args?.first
-                    if firstArgument != nil {
-                        program = firstArgument
-                    }
-                }
-            }
-
-            if program != nil {
-                var entries = cache[program!]
-                let entry = LaunchdEntry(
-                    url: plistUrl,
-                    plist: plist
-                )
-                if entries != nil {
-                    entries?.append(entry)
-                } else {
-                    cache[program!] = [entry]
-                }
-            }
-        }
-
-        lock.unlock()
     }
 
     func analyze(_ url: URL, _ output: AnalysisOutput) throws {
-        let plists = cache[url.path]
+        let plists = launchdCollector.foundExecutables[url.path]
         if plists == nil {
             return
         }
@@ -90,10 +46,5 @@ class LaunchdAnalyzer: ExecutableAnalyzer {
 
     func name() -> String {
         return "launchd"
-    }
-
-    struct LaunchdEntry {
-        let url: URL
-        let plist: NSDictionary
     }
 }

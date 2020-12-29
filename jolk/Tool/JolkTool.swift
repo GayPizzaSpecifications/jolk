@@ -29,6 +29,21 @@ struct JolkTool: ParsableCommand {
         for filePath in JolkDefaults.standardLaunchdPaths {
             try launchdCollector.scan(filePath)
         }
+        try launchdCollector.process()
+
+        var allFoundExecutables: [URL] = []
+        allFoundExecutables.append(contentsOf: executableCollector.executables)
+
+        for filePath in launchdCollector.foundExecutables.keys {
+            let url = URL(fileURLWithPath: filePath)
+            if !allFoundExecutables.contains(url) {
+                allFoundExecutables.append(url)
+            }
+        }
+
+        allFoundExecutables.sort { a, b in
+            a.path.compare(b.path) == .orderedAscending
+        }
 
         let analyzers: [ExecutableAnalyzer] = [
             LipoAnalyzer(),
@@ -43,7 +58,7 @@ struct JolkTool: ParsableCommand {
 
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = jobs
-        for urlForExecutable in executableCollector.executables {
+        for urlForExecutable in allFoundExecutables {
             let url = urlForExecutable
             let outputForFile = outputCollection.get(url)
             queue.addOperation {
