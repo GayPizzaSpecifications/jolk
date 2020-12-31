@@ -8,14 +8,14 @@
 import AnyCodable
 import Foundation
 
-class LaunchdAnalyzer: ExecutableAnalyzer {
-    let launchdCollector: LaunchdCollector
+public class LaunchdAnalyzer: ExecutableAnalyzer {
+    private let launchdCollector: LaunchdCollector
 
-    init(_ launchdCollector: LaunchdCollector) throws {
+    public init(_ launchdCollector: LaunchdCollector) throws {
         self.launchdCollector = launchdCollector
     }
 
-    func analyze(_ url: URL, _ output: AnalysisOutput) throws {
+    public func analyze(_ url: URL, _ output: AnalysisOutput) throws {
         let plists = launchdCollector.foundExecutables[url.path]
         if plists == nil {
             return
@@ -44,7 +44,7 @@ class LaunchdAnalyzer: ExecutableAnalyzer {
         output.set("launchd.mach.services", AnyCodable(machServices))
     }
 
-    func name() -> String {
+    public func name() -> String {
         return "launchd"
     }
 }

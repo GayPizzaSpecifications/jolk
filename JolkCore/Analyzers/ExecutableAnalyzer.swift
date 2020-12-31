@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ExecutableAnalyzer {
+public protocol ExecutableAnalyzer {
     func analyze(_ url: URL, _ output: AnalysisOutput) throws
     func name() -> String
 }

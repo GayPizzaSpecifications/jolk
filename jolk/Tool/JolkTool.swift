@@ -7,6 +7,7 @@
 
 import ArgumentParser
 import Foundation
+import JolkCore
 
 struct JolkTool: ParsableCommand {
     static var configuration = CommandConfiguration(

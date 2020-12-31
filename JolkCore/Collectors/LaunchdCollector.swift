@@ -7,11 +7,13 @@
 
 import Foundation
 
-class LaunchdCollector {
-    var plistFileUrls: [URL] = []
-    var foundExecutables: [String: [LaunchdEntry]] = [:]
+public class LaunchdCollector {
+    public var plistFileUrls: [URL] = []
+    public var foundExecutables: [String: [LaunchdEntry]] = [:]
 
-    func scan(_ path: String) throws {
+    public init() {}
+
+    public func scan(_ path: String) throws {
         let url = URL(fileURLWithPath: path, isDirectory: true)
 
         let urlsForPlists = try FileManager.default.contentsOfDirectory(
@@ -27,7 +29,7 @@ class LaunchdCollector {
         }
     }
 
-    func process() throws {
+    public func process() throws {
         if !foundExecutables.isEmpty {
             return
         }
@@ -63,8 +65,8 @@ class LaunchdCollector {
         }
     }
 
-    struct LaunchdEntry {
-        let url: URL
-        let plist: NSDictionary
+    public struct LaunchdEntry {
+        public let url: URL
+        public let plist: NSDictionary
     }
 }

@@ -8,8 +8,10 @@
 import AnyCodable
 import Foundation
 
-class DynamicLinkerAnalyzer: ExecutableAnalyzer {
-    func analyze(_ url: URL, _ output: AnalysisOutput) throws {
+public class DynamicLinkerAnalyzer: ExecutableAnalyzer {
+    public init() {}
+
+    public func analyze(_ url: URL, _ output: AnalysisOutput) throws {
         let result = try ProcessRunner.run("/usr/bin/otool", [
             "-L",
             url.path
@@ -45,7 +47,7 @@ class DynamicLinkerAnalyzer: ExecutableAnalyzer {
         output.set("dynamic-linker.linked-frameworks", AnyCodable(linkedFrameworks))
     }
 
-    func name() -> String {
+    public func name() -> String {
         return "dynamic-linker"
     }
 }

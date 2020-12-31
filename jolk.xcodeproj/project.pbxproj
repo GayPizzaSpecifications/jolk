@@ -7,25 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2A280EBC2599DE810031F5EC /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EBB2599DE810031F5EC /* ProcessRunner.swift */; };
-		2A280EC12599E3910031F5EC /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EC02599E3910031F5EC /* UnfairLock.swift */; };
 		2A280EC7259AC83F0031F5EC /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 2A280EC6259AC83F0031F5EC /* ArgumentParser */; };
 		2A280ECA259AC8580031F5EC /* JolkTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EC9259AC8580031F5EC /* JolkTool.swift */; };
 		2A280ECE259AC8EF0031F5EC /* JolkDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280ECD259AC8EF0031F5EC /* JolkDefaults.swift */; };
 		2A7847F325998A1900903FC1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847F225998A1900903FC1 /* main.swift */; };
-		2A7847FC25998BB300903FC1 /* ExecutableCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */; };
-		2A7847FF25998EE900903FC1 /* StringsAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */; };
-		2A7848032599917F00903FC1 /* AnalysisOutputCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7848022599917F00903FC1 /* AnalysisOutputCollection.swift */; };
-		2A784807259994C100903FC1 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 2A784806259994C100903FC1 /* AnyCodable */; };
-		2A78480A259998A000903FC1 /* LipoAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784809259998A000903FC1 /* LipoAnalyzer.swift */; };
-		2A78480D2599998F00903FC1 /* ExecutableAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */; };
-		2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784811259999FB00903FC1 /* AnalysisOutput.swift */; };
-		2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */; };
-		2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */; };
-		2AF371EA259A59CF00D5640D /* UsageExtractionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */; };
-		2AF371F0259A668600D5640D /* LaunchdAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */; };
-		2AF371F3259A671200D5640D /* LaunchdCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371F2259A671200D5640D /* LaunchdCollector.swift */; };
+		2AB1996D259D7C17001B3F75 /* JolkCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AB1996B259D7C17001B3F75 /* JolkCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2AB19974259D7C48001B3F75 /* JolkCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB19969259D7C17001B3F75 /* JolkCore.framework */; };
+		2AB19975259D7C48001B3F75 /* JolkCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB19969259D7C17001B3F75 /* JolkCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2AB1997B259D7C4E001B3F75 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 2AB1997A259D7C4E001B3F75 /* AnyCodable */; };
+		2AB1997F259D7C8E001B3F75 /* UsageExtractionAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */; };
+		2AB19980259D7C8E001B3F75 /* ExecutableAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78480C2599998F00903FC1 /* ExecutableAnalyzer.swift */; };
+		2AB19981259D7C8E001B3F75 /* LipoAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784809259998A000903FC1 /* LipoAnalyzer.swift */; };
+		2AB19982259D7C8E001B3F75 /* StringsAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FE25998EE900903FC1 /* StringsAnalyzer.swift */; };
+		2AB19983259D7C8E001B3F75 /* LaunchdAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */; };
+		2AB19984259D7C8E001B3F75 /* ManPageAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */; };
+		2AB19985259D7C8E001B3F75 /* DynamicLinkerAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */; };
+		2AB19989259D7C96001B3F75 /* ExecutableCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7847FB25998BB300903FC1 /* ExecutableCollector.swift */; };
+		2AB1998A259D7C96001B3F75 /* LaunchdCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF371F2259A671200D5640D /* LaunchdCollector.swift */; };
+		2AB1998D259D7C9C001B3F75 /* AnalysisOutputCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7848022599917F00903FC1 /* AnalysisOutputCollection.swift */; };
+		2AB1998E259D7C9C001B3F75 /* AnalysisOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784811259999FB00903FC1 /* AnalysisOutput.swift */; };
+		2AB19991259D7CA0001B3F75 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EBB2599DE810031F5EC /* ProcessRunner.swift */; };
+		2AB19992259D7CA0001B3F75 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EC02599E3910031F5EC /* UnfairLock.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2AB19976259D7C48001B3F75 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A7847E725998A1900903FC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2AB19968259D7C17001B3F75;
+			remoteInfo = JolkCore;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		2A7847ED25998A1900903FC1 /* CopyFiles */ = {
@@ -36,6 +49,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		2AB19978259D7C49001B3F75 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2AB19975259D7C48001B3F75 /* JolkCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -54,6 +78,9 @@
 		2A784811259999FB00903FC1 /* AnalysisOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisOutput.swift; sourceTree = "<group>"; };
 		2A7848182599A30300903FC1 /* ManPageAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManPageAnalyzer.swift; sourceTree = "<group>"; };
 		2A78481B2599A83600903FC1 /* DynamicLinkerAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicLinkerAnalyzer.swift; sourceTree = "<group>"; };
+		2AB19969259D7C17001B3F75 /* JolkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JolkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AB1996B259D7C17001B3F75 /* JolkCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JolkCore.h; sourceTree = "<group>"; };
+		2AB1996C259D7C17001B3F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageExtractionAnalyzer.swift; sourceTree = "<group>"; };
 		2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdAnalyzer.swift; sourceTree = "<group>"; };
 		2AF371F2259A671200D5640D /* LaunchdCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdCollector.swift; sourceTree = "<group>"; };
@@ -65,7 +92,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A280EC7259AC83F0031F5EC /* ArgumentParser in Frameworks */,
-				2A784807259994C100903FC1 /* AnyCodable in Frameworks */,
+				2AB19974259D7C48001B3F75 /* JolkCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB19966259D7C17001B3F75 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB1997B259D7C4E001B3F75 /* AnyCodable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				2A7847F125998A1900903FC1 /* jolk */,
+				2AB1996A259D7C17001B3F75 /* JolkCore */,
 				2A7847F025998A1900903FC1 /* Products */,
+				2AB19973259D7C48001B3F75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				2A7847EF25998A1900903FC1 /* jolk */,
+				2AB19969259D7C17001B3F75 /* JolkCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,10 +167,6 @@
 			children = (
 				2A7847F225998A1900903FC1 /* main.swift */,
 				2A280ED5259ACF2A0031F5EC /* Tool */,
-				2A7848162599A17700903FC1 /* Analyzers */,
-				2A280ED2259ACED00031F5EC /* Collectors */,
-				2A280ED4259ACEFC0031F5EC /* Output */,
-				2A280ED1259ACEB40031F5EC /* Utilities */,
 			);
 			path = jolk;
 			sourceTree = "<group>";
@@ -151,7 +185,38 @@
 			path = Analyzers;
 			sourceTree = "<group>";
 		};
+		2AB1996A259D7C17001B3F75 /* JolkCore */ = {
+			isa = PBXGroup;
+			children = (
+				2AB1996B259D7C17001B3F75 /* JolkCore.h */,
+				2AB1996C259D7C17001B3F75 /* Info.plist */,
+				2A7848162599A17700903FC1 /* Analyzers */,
+				2A280ED2259ACED00031F5EC /* Collectors */,
+				2A280ED4259ACEFC0031F5EC /* Output */,
+				2A280ED1259ACEB40031F5EC /* Utilities */,
+			);
+			path = JolkCore;
+			sourceTree = "<group>";
+		};
+		2AB19973259D7C48001B3F75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		2AB19964259D7C17001B3F75 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB1996D259D7C17001B3F75 /* JolkCore.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2A7847EE25998A1900903FC1 /* jolk */ = {
@@ -161,19 +226,41 @@
 				2A7847EB25998A1900903FC1 /* Sources */,
 				2A7847EC25998A1900903FC1 /* Frameworks */,
 				2A7847ED25998A1900903FC1 /* CopyFiles */,
+				2AB19978259D7C49001B3F75 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2AB19977259D7C48001B3F75 /* PBXTargetDependency */,
 			);
 			name = jolk;
 			packageProductDependencies = (
-				2A784806259994C100903FC1 /* AnyCodable */,
 				2A280EC6259AC83F0031F5EC /* ArgumentParser */,
 			);
 			productName = SystemExecutableAnalyzer;
 			productReference = 2A7847EF25998A1900903FC1 /* jolk */;
 			productType = "com.apple.product-type.tool";
+		};
+		2AB19968259D7C17001B3F75 /* JolkCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2AB1996E259D7C17001B3F75 /* Build configuration list for PBXNativeTarget "JolkCore" */;
+			buildPhases = (
+				2AB19964259D7C17001B3F75 /* Headers */,
+				2AB19965259D7C17001B3F75 /* Sources */,
+				2AB19966259D7C17001B3F75 /* Frameworks */,
+				2AB19967259D7C17001B3F75 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JolkCore;
+			packageProductDependencies = (
+				2AB1997A259D7C4E001B3F75 /* AnyCodable */,
+			);
+			productName = JolkCore;
+			productReference = 2AB19969259D7C17001B3F75 /* JolkCore.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -185,6 +272,9 @@
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					2A7847EE25998A1900903FC1 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					2AB19968259D7C17001B3F75 = {
 						CreatedOnToolsVersion = 12.3;
 					};
 				};
@@ -207,35 +297,61 @@
 			projectRoot = "";
 			targets = (
 				2A7847EE25998A1900903FC1 /* jolk */,
+				2AB19968259D7C17001B3F75 /* JolkCore */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2AB19967259D7C17001B3F75 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A7847EB25998A1900903FC1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A78480A259998A000903FC1 /* LipoAnalyzer.swift in Sources */,
-				2AF371F3259A671200D5640D /* LaunchdCollector.swift in Sources */,
-				2A7848032599917F00903FC1 /* AnalysisOutputCollection.swift in Sources */,
-				2A7847FF25998EE900903FC1 /* StringsAnalyzer.swift in Sources */,
-				2A280EBC2599DE810031F5EC /* ProcessRunner.swift in Sources */,
 				2A280ECE259AC8EF0031F5EC /* JolkDefaults.swift in Sources */,
-				2AF371EA259A59CF00D5640D /* UsageExtractionAnalyzer.swift in Sources */,
 				2A280ECA259AC8580031F5EC /* JolkTool.swift in Sources */,
-				2A78480D2599998F00903FC1 /* ExecutableAnalyzer.swift in Sources */,
 				2A7847F325998A1900903FC1 /* main.swift in Sources */,
-				2A78481C2599A83600903FC1 /* DynamicLinkerAnalyzer.swift in Sources */,
-				2A280EC12599E3910031F5EC /* UnfairLock.swift in Sources */,
-				2A7847FC25998BB300903FC1 /* ExecutableCollector.swift in Sources */,
-				2A784812259999FB00903FC1 /* AnalysisOutput.swift in Sources */,
-				2AF371F0259A668600D5640D /* LaunchdAnalyzer.swift in Sources */,
-				2A7848192599A30300903FC1 /* ManPageAnalyzer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2AB19965259D7C17001B3F75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2AB1998D259D7C9C001B3F75 /* AnalysisOutputCollection.swift in Sources */,
+				2AB19982259D7C8E001B3F75 /* StringsAnalyzer.swift in Sources */,
+				2AB19983259D7C8E001B3F75 /* LaunchdAnalyzer.swift in Sources */,
+				2AB19991259D7CA0001B3F75 /* ProcessRunner.swift in Sources */,
+				2AB19985259D7C8E001B3F75 /* DynamicLinkerAnalyzer.swift in Sources */,
+				2AB19992259D7CA0001B3F75 /* UnfairLock.swift in Sources */,
+				2AB1998A259D7C96001B3F75 /* LaunchdCollector.swift in Sources */,
+				2AB19981259D7C8E001B3F75 /* LipoAnalyzer.swift in Sources */,
+				2AB19984259D7C8E001B3F75 /* ManPageAnalyzer.swift in Sources */,
+				2AB19989259D7C96001B3F75 /* ExecutableCollector.swift in Sources */,
+				2AB1997F259D7C8E001B3F75 /* UsageExtractionAnalyzer.swift in Sources */,
+				2AB1998E259D7C9C001B3F75 /* AnalysisOutput.swift in Sources */,
+				2AB19980259D7C8E001B3F75 /* ExecutableAnalyzer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2AB19977259D7C48001B3F75 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2AB19968259D7C17001B3F75 /* JolkCore */;
+			targetProxy = 2AB19976259D7C48001B3F75 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2A7847F425998A1900903FC1 /* Debug */ = {
@@ -377,6 +493,64 @@
 			};
 			name = Release;
 		};
+		2AB1996F259D7C17001B3F75 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3FQW5YTQR8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JolkCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.endfinger.JolkCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2AB19970259D7C17001B3F75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3FQW5YTQR8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JolkCore/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.endfinger.JolkCore;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -394,6 +568,15 @@
 			buildConfigurations = (
 				2A7847F725998A1900903FC1 /* Debug */,
 				2A7847F825998A1900903FC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2AB1996E259D7C17001B3F75 /* Build configuration list for PBXNativeTarget "JolkCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AB1996F259D7C17001B3F75 /* Debug */,
+				2AB19970259D7C17001B3F75 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -425,7 +608,7 @@
 			package = 2A280EC5259AC83F0031F5EC /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
 			productName = ArgumentParser;
 		};
-		2A784806259994C100903FC1 /* AnyCodable */ = {
+		2AB1997A259D7C4E001B3F75 /* AnyCodable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2A784805259994C100903FC1 /* XCRemoteSwiftPackageReference "AnyCodable" */;
 			productName = AnyCodable;

@@ -8,7 +8,9 @@
 import AnyCodable
 import Foundation
 
-class StringsAnalyzer: ExecutableAnalyzer {
+public class StringsAnalyzer: ExecutableAnalyzer {
+    public init() {}
+
     private func fetch(_ url: URL) throws -> [String] {
         let result = try ProcessRunner.run("/usr/bin/strings", [
             url.path
@@ -24,7 +26,7 @@ class StringsAnalyzer: ExecutableAnalyzer {
         return stringsInFile
     }
 
-    func analyze(_ url: URL, _ output: AnalysisOutput) throws {
+    public func analyze(_ url: URL, _ output: AnalysisOutput) throws {
         let stringsInFile = try fetch(url)
 
         var likelyHasUsage = false
@@ -45,7 +47,7 @@ class StringsAnalyzer: ExecutableAnalyzer {
         output.set("strings.likely.has-help-flag", AnyCodable(hasHelpFlag))
     }
 
-    func name() -> String {
+    public func name() -> String {
         return "strings"
     }
 }

@@ -7,10 +7,12 @@
 
 import Foundation
 
-class ExecutableCollector {
-    var executables: [URL] = []
+public class ExecutableCollector {
+    public var executables: [URL] = []
 
-    func scan(_ path: String) throws {
+    public init() {}
+
+    public func scan(_ path: String) throws {
         let url = URL(fileURLWithPath: path, isDirectory: true)
 
         let urlsForExecutables = try FileManager.default.contentsOfDirectory(
@@ -27,7 +29,7 @@ class ExecutableCollector {
         }
     }
 
-    func sort() {
+    public func sort() {
         executables.sort { a, b in
             a.path.compare(b.path) == .orderedAscending
         }

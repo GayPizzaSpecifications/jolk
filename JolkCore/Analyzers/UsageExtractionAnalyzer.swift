@@ -8,8 +8,10 @@
 import AnyCodable
 import Foundation
 
-class UsageExtractionAnalyzer: ExecutableAnalyzer {
-    func analyze(_ url: URL, _ output: AnalysisOutput) throws {
+public class UsageExtractionAnalyzer: ExecutableAnalyzer {
+    public init() {}
+
+    public func analyze(_ url: URL, _ output: AnalysisOutput) throws {
         if output.get(bool: "strings.likely.has-help-flag") {
             let result = try ProcessRunner.run(url.path, [
                 "--help"
@@ -26,7 +28,7 @@ class UsageExtractionAnalyzer: ExecutableAnalyzer {
         }
     }
 
-    func name() -> String {
+    public func name() -> String {
         return "usage-extractor"
     }
 }

@@ -8,8 +8,10 @@
 import AnyCodable
 import Foundation
 
-class LipoAnalyzer: ExecutableAnalyzer {
-    func analyze(_ url: URL, _ output: AnalysisOutput) throws {
+public class LipoAnalyzer: ExecutableAnalyzer {
+    public init() {}
+
+    public func analyze(_ url: URL, _ output: AnalysisOutput) throws {
         let result = try ProcessRunner.run("/usr/bin/lipo", [
             "-archs",
             url.path
@@ -37,7 +39,7 @@ class LipoAnalyzer: ExecutableAnalyzer {
         }
     }
 
-    func name() -> String {
+    public func name() -> String {
         return "lipo"
     }
 }
