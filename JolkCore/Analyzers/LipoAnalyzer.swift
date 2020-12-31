@@ -1,6 +1,6 @@
 //
 //  LipoAnalyzer.swift
-//  jolk
+//  JolkCore
 //
 //  Created by Kenneth Endfinger on 12/27/20.
 //

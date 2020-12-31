@@ -1,6 +1,6 @@
 //
 //  LaunchdCollector.swift
-//  jolk
+//  JolkCore
 //
 //  Created by Kenneth Endfinger on 12/28/20.
 //
