@@ -12,8 +12,8 @@ public class ExecutableCollector {
 
     public init() {}
 
-    public func scan(_ path: String) throws {
-        let url = URL(fileURLWithPath: path, isDirectory: true)
+    public func scan(path: String) throws {
+        let url = URL(fileURLWithPath: path)
 
         let urlsForExecutables = try FileManager.default.contentsOfDirectory(
             at: url,
@@ -27,6 +27,14 @@ public class ExecutableCollector {
                 executables.append(url)
             }
         }
+    }
+
+    public func add(path: String) {
+        executables.append(URL(fileURLWithPath: path))
+    }
+
+    public func add(url: URL) {
+        executables.append(url)
     }
 
     public func sort() {

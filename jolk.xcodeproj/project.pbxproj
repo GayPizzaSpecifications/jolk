@@ -81,6 +81,7 @@
 		2AB19969259D7C17001B3F75 /* JolkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JolkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AB1996B259D7C17001B3F75 /* JolkCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JolkCore.h; sourceTree = "<group>"; };
 		2AB1996C259D7C17001B3F75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2AD0D0AF259D808D00CC7FB2 /* JolkPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JolkPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageExtractionAnalyzer.swift; sourceTree = "<group>"; };
 		2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdAnalyzer.swift; sourceTree = "<group>"; };
 		2AF371F2259A671200D5640D /* LaunchdCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdCollector.swift; sourceTree = "<group>"; };
@@ -146,6 +147,7 @@
 		2A7847E625998A1900903FC1 = {
 			isa = PBXGroup;
 			children = (
+				2AD0D0AF259D808D00CC7FB2 /* JolkPlayground.playground */,
 				2A7847F125998A1900903FC1 /* jolk */,
 				2AB1996A259D7C17001B3F75 /* JolkCore */,
 				2A7847F025998A1900903FC1 /* Products */,
@@ -511,7 +513,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.endfinger.JolkCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -540,7 +542,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.endfinger.JolkCore;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";

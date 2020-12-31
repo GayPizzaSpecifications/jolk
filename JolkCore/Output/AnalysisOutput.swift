@@ -46,4 +46,9 @@ public class AnalysisOutput {
     public func isInCollection() -> Bool {
         return collection.has(self)
     }
+
+    public static func create(for url: URL) -> AnalysisOutput {
+        let collection = AnalysisOutputCollection()
+        return collection.get(url)
+    }
 }

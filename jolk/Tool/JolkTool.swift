@@ -27,7 +27,7 @@ struct JolkTool: ParsableCommand {
     func run() throws {
         let executableCollector = ExecutableCollector()
         for filePath in JolkDefaults.standardExecutablePaths {
-            try executableCollector.scan(filePath)
+            try executableCollector.scan(path: filePath)
         }
         executableCollector.sort()
 
