@@ -135,20 +135,11 @@
 			path = Output;
 			sourceTree = "<group>";
 		};
-		2A280ED5259ACF2A0031F5EC /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				2A280ECD259AC8EF0031F5EC /* JolkDefaults.swift */,
-				2A280EC9259AC8580031F5EC /* JolkTool.swift */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
 		2A7847E625998A1900903FC1 = {
 			isa = PBXGroup;
 			children = (
 				2AD0D0AF259D808D00CC7FB2 /* JolkPlayground.playground */,
-				2A7847F125998A1900903FC1 /* jolk */,
+				2A7847F125998A1900903FC1 /* JolkTool */,
 				2AB1996A259D7C17001B3F75 /* JolkCore */,
 				2A7847F025998A1900903FC1 /* Products */,
 				2AB19973259D7C48001B3F75 /* Frameworks */,
@@ -164,13 +155,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2A7847F125998A1900903FC1 /* jolk */ = {
+		2A7847F125998A1900903FC1 /* JolkTool */ = {
 			isa = PBXGroup;
 			children = (
 				2A7847F225998A1900903FC1 /* main.swift */,
-				2A280ED5259ACF2A0031F5EC /* Tool */,
+				2A280ECD259AC8EF0031F5EC /* JolkDefaults.swift */,
+				2A280EC9259AC8580031F5EC /* JolkTool.swift */,
 			);
-			path = jolk;
+			path = JolkTool;
 			sourceTree = "<group>";
 		};
 		2A7848162599A17700903FC1 /* Analyzers */ = {
