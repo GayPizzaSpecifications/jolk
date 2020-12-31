@@ -138,9 +138,9 @@
 		2A7847E625998A1900903FC1 = {
 			isa = PBXGroup;
 			children = (
-				2AD0D0AF259D808D00CC7FB2 /* JolkPlayground.playground */,
-				2A7847F125998A1900903FC1 /* JolkTool */,
 				2AB1996A259D7C17001B3F75 /* JolkCore */,
+				2A7847F125998A1900903FC1 /* JolkTool */,
+				2AD0D0B3259E624000CC7FB2 /* Playgrounds */,
 				2A7847F025998A1900903FC1 /* Products */,
 				2AB19973259D7C48001B3F75 /* Frameworks */,
 			);
@@ -197,6 +197,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2AD0D0B3259E624000CC7FB2 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				2AD0D0AF259D808D00CC7FB2 /* JolkPlayground.playground */,
+			);
+			path = Playgrounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
