@@ -28,6 +28,7 @@
 		2AB1998E259D7C9C001B3F75 /* AnalysisOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A784811259999FB00903FC1 /* AnalysisOutput.swift */; };
 		2AB19991259D7CA0001B3F75 /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EBB2599DE810031F5EC /* ProcessRunner.swift */; };
 		2AB19992259D7CA0001B3F75 /* UnfairLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A280EC02599E3910031F5EC /* UnfairLock.swift */; };
+		2AFA6E3225A9D408001B372C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA6E3125A9D408001B372C /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		2AF371E9259A59CF00D5640D /* UsageExtractionAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageExtractionAnalyzer.swift; sourceTree = "<group>"; };
 		2AF371EF259A668600D5640D /* LaunchdAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdAnalyzer.swift; sourceTree = "<group>"; };
 		2AF371F2259A671200D5640D /* LaunchdCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchdCollector.swift; sourceTree = "<group>"; };
+		2AFA6E3125A9D408001B372C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 				2A7847F225998A1900903FC1 /* main.swift */,
 				2A280ECD259AC8EF0031F5EC /* JolkDefaults.swift */,
 				2A280EC9259AC8580031F5EC /* JolkTool.swift */,
+				2AFA6E3125A9D408001B372C /* Extensions.swift */,
 			);
 			path = JolkTool;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				2A280ECE259AC8EF0031F5EC /* JolkDefaults.swift in Sources */,
 				2A280ECA259AC8580031F5EC /* JolkTool.swift in Sources */,
 				2A7847F325998A1900903FC1 /* main.swift in Sources */,
+				2AFA6E3225A9D408001B372C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,10 @@ struct JolkTool: ParsableCommand {
 
     @Option(name: .shortAndLong, help: "Output File")
     var output: String = "executables.json"
-
+    
+    @Option(name: .shortAndLong, help: "Include Files Matching Regular Expression")
+    var include: String = ".*"
+    
     func run() throws {
         let executableCollector = ExecutableCollector()
         for filePath in JolkDefaults.standardExecutablePaths {
@@ -49,6 +52,11 @@ struct JolkTool: ParsableCommand {
 
         allFoundExecutables.sort { a, b in
             a.path.compare(b.path) == .orderedAscending
+        }
+        
+        let regex = try NSRegularExpression(pattern: include)
+        allFoundExecutables.removeAll { url in
+            !regex.hasExactMatch(url.path)
         }
 
         let analyzers: [ExecutableAnalyzer] = [
