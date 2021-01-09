@@ -14,7 +14,7 @@ extension NSRegularExpression {
         guard let result = match else {
             return false
         }
-        
+
         if result.range == range {
             return true
         }
