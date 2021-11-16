@@ -28,9 +28,9 @@ public class AnalysisOutput {
     }
 
     public func get(bool: String) -> Bool {
-        let x = get(bool)
-        if x.value is Bool {
-            return x.value as! Bool
+        let result = get(bool)
+        if result.value is Bool {
+            return result.value as! Bool
         }
         return false
     }

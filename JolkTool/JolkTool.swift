@@ -50,8 +50,8 @@ struct JolkTool: ParsableCommand {
             }
         }
 
-        allFoundExecutables.sort { a, b in
-            a.path.compare(b.path) == .orderedAscending
+        allFoundExecutables.sort { left, right in
+            left.path.compare(right.path) == .orderedAscending
         }
 
         let regex = try NSRegularExpression(pattern: include)
@@ -107,9 +107,9 @@ struct JolkTool: ParsableCommand {
         }
         let end = DispatchTime.now()
         let timeInNanoseconds = end.uptimeNanoseconds - start.uptimeNanoseconds
-        let ms = Double(timeInNanoseconds) / 1_000_000.0
+        let milliseconds = Double(timeInNanoseconds) / 1_000_000.0
         if !quiet {
-            print("complete \(url.path) \(String(format: "%.2f", ms))ms")
+            print("complete \(url.path) \(String(format: "%.2f", milliseconds))ms")
         }
     }
 

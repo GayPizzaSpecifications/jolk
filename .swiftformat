@@ -1,1 +1,3 @@
 --indent 4
+--disable trailingCommas
+--disable wrapMultilineStatementBraces
