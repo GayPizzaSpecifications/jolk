@@ -11,6 +11,9 @@ jolk is a tool that analyzes executables installed in macOS using various analyz
 
 ## Usage
 
+1. Install [Homebrew](https://brew.sh)
+2. Install jolk with Homebrew: `brew install kendfinger/tools/jolk`
+
 ```text
 $ jolk
 analyze /usr/libexec/remoted
