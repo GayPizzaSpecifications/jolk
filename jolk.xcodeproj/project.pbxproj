@@ -597,7 +597,7 @@
 			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.1;
+				minimumVersion = 1.0.0;
 			};
 		};
 		2A784805259994C100903FC1 /* XCRemoteSwiftPackageReference "AnyCodable" */ = {
@@ -605,7 +605,7 @@
 			repositoryURL = "https://github.com/Flight-School/AnyCodable.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
+				minimumVersion = 0.6.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
