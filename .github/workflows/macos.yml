@@ -1,0 +1,31 @@
+name: macOS
+on: [push]
+jobs:
+  build:
+    runs-on: macos-11
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Build Executable
+        run: xcodebuild archive -configuration Release -scheme jolk -archivePath XcodeOutput CODE_SIGN_IDENTITY= CODE_SIGNING_REQUIRED=NO
+      - name: Copy Executable
+        run: cp XcodeOutput.xcarchive/Products/usr/local/bin/jolk jolk
+      - name: Archive Executable
+        uses: actions/upload-artifact@v2
+        with:
+          name: jolk
+          path: jolk
+  format:
+    runs-on: macos-11
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Swift Format
+        run: swiftformat --lint .
+  lint:
+    runs-on: macos-11
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Swift Lint
+        run: swiftlint .

@@ -17,10 +17,8 @@ public class StringsAnalyzer: ExecutableAnalyzer {
         ])
         var stringsInFile: [String] = []
 
-        for line in result.standardOutput.components(separatedBy: "\n") {
-            if !line.isEmpty {
-                stringsInFile.append(line)
-            }
+        for line in result.standardOutput.components(separatedBy: "\n") where !line.isEmpty {
+            stringsInFile.append(line)
         }
 
         return stringsInFile

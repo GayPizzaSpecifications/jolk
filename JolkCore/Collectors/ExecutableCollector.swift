@@ -38,8 +38,8 @@ public class ExecutableCollector {
     }
 
     public func sort() {
-        executables.sort { a, b in
-            a.path.compare(b.path) == .orderedAscending
+        executables.sort { left, right in
+            left.path.compare(right.path) == .orderedAscending
         }
     }
 }
